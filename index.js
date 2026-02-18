@@ -3,19 +3,26 @@ const team = [
   {
     id: "anna",
     fullName: "Anna Kendrick",
+    jobTitle: "Front-end Ninja",
+    bio: "Bibliophile, loves to dive into fictional worlds, ships JS code like brownies",
     avatar: "avataaars/annakendrick.svg", // No dot, no leading slash
   },
   {
     id: "harry",
     fullName: "Harry Fawn",
+    jobTitle: "Illustrator",
+    bio: "Creates new illustrations each week, will kill for coffee, and loves beaches",
     avatar: "avataaars/harryfn.svg",
   },
   {
     id: "sofia",
     fullName: "Sofia Sultan",
+    jobTitle: "Backend Engineer",
+    bio: "Donuts over waffles. Martinis over whiskeys. Typescript over anything.",
     avatar: "avataaars/sofiasul.svg",
   },
 ];
+
 //Modify Code below this line
 
 //Content Selected using ID.
@@ -31,13 +38,13 @@ const getImageElement = (src, alt) => {
   // Create the img element
   const img = document.createElement("img");
 
-  // Set the required attributes [cite: 38]
+  // Set the required attributes
   img.setAttribute("src", src);
   img.setAttribute("alt", alt);
-  img.setAttribute("height", "100"); // [cite: 39]
-  img.setAttribute("width", "100"); // [cite: 39]
+  img.setAttribute("height", "100"); //
+  img.setAttribute("width", "100"); //
 
-  return img; // [cite: 40]
+  return img; //
 };
 
 /**
@@ -50,12 +57,12 @@ const getImageElement = (src, alt) => {
  * @returns section HTML element with Image and Text
  */
 function generateCard(id, fullName, jobTitle, bio, avatar) {
-  // 1. Create a new "section" element and set the className and id [cite: 45]
+  // 1. Create a new "section" element and set the className and id
   const section = document.createElement("section");
   section.classList.add("team-member");
   section.setAttribute("id", id);
 
-  // 2. Generate the image using getImageElement() function [cite: 37]
+  // 2. Generate the image using getImageElement() function
   const imageElement = getImageElement(avatar, fullName);
 
   // 3. Create a div for text content
@@ -73,12 +80,12 @@ function generateCard(id, fullName, jobTitle, bio, avatar) {
   const bioP = document.createElement("p");
   bioP.textContent = bio;
 
-  // 7. Append the fullName, jobTitle, and bio element to the div [cite: 45]
+  // 7. Append the fullName, jobTitle, and bio element to the div
   textDiv.append(nameH2);
   textDiv.append(titleH3);
   textDiv.append(bioP);
 
-  // 8. Append the Image and the Text div to the new section [cite: 45]
+  // 8. Append the Image and the Text div to the new section
   section.append(imageElement);
   section.append(textDiv);
 
